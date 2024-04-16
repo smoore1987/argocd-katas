@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: quotes-student-13
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: student-13
+  project: default
+  source:
+    repoURL: https://github.com/smoore1987/argocd-katas
+    targetRevision: HEAD
+    path: quotes-flask/helm/quotes-flask
+    helm:
+      valueFiles:
+        - values.yaml
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

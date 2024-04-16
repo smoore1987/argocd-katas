@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: student-x-project # remember to change this!
+  name: student-13-project # remember to change this!
   namespace: argocd
 spec:
-  description: A project for student-x to play with # remember to change this!
+  description: A project for student-13 to play with # remember to change this!
   destinations:
   - name: in-cluster
-    namespace: student-x #remember to change this!
+    namespace: student-13 #remember to change this!
     server: https://kubernetes.default.svc
   namespaceResourceBlacklist:
   - group: rbac.authorization.k8s.io
